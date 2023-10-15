@@ -2,6 +2,9 @@
 
 Este é um projeto de exemplo que demonstra como usar a biblioteca Scrapy para realizar web scraping no site da Amazon em busca de informações sobre produtos.
 
+![Texto Alternativo](./dados.PNG)
+
+
 ## Requisitos
 
 Antes de começar, certifique-se de ter os seguintes requisitos instalados em seu ambiente:
