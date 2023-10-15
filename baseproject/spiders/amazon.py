@@ -20,9 +20,11 @@ class AmazonSpider(scrapy.Spider):
         for product in products:
             price = product.xpath('.//span[contains(@class, "a-price-whole")]/text()').get()
             name = product.xpath('.//span[contains(@class, "a-color-base") and contains(@class, "a-text-normal")]/text()').get()
+            link = product.xpath('.//a[@class="a-link-normal s-underline-text s-underline-link-text s-link-style a-text-normal"]/@href').get()
             yield{
                 'nome':name,
-                'preço':price
+                'preço':price,
+                'link':f'https://www.amazon.com.br/{link}'
             }
 
         
