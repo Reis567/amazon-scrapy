@@ -6,8 +6,15 @@ class AmazonSpider(scrapy.Spider):
     start_urls = ["https://www.amazon.com.br/s?k=SSD+1TB"]
 
     def parse(self, response):
-        product = response.xpath('//*[contains(concat( " ", @class, " " ), concat( " ", "a-spacing-base", " " ))]')
-        price = response.xpath('//*[contains(concat( " ", @class, " " ), concat( " ", "a-price-whole", " " ))]')
-        name = response.xpath('//*[contains(concat( " ", @class, " " ), concat( " ", "a-color-base", " " )) and contains(concat( " ", @class, " " ), concat( " ", "a-text-normal", " " ))]')
+        products = response.xpath('//*[contains(concat( " ", @class, " " ), concat( " ", "a-spacing-base", " " ))]')
+        
+
+        for product in products:
+            price = product.xpath('.//span[contains(@class, "a-price-whole")]/text()').get()
+            name = product.xpath('.//span[contains(@class, "a-color-base") and contains(@class, "a-text-normal")]/text()').get()
+            yield{
+                'nome':name,
+                'preço':price
+            }
 
         
