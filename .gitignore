@@ -1,0 +1,48 @@
+# Arquivos e diretórios específicos para ambientes virtuais
+venv/
+env/
+*.pyc
+
+# Logs e arquivos temporários
+*.log
+*.swp
+*.swo
+__pycache__/
+scrapy.cfg
+
+# Arquivos de dados, como CSV ou JSON
+*.csv
+*.json
+
+# Diretórios de saída para os dados raspados
+output/
+data/
+
+# Arquivos de configuração sensíveis, como senhas e chaves de API
+settings.py
+
+# Arquivos de documentação
+doc/
+docs/
+
+# Arquivos de configuração de ambiente (por exemplo, .env)
+.env
+
+# Dependências e diretórios de construção
+.idea/
+.vscode/
+__pycache__/
+build/
+dist/
+
+# Arquivos gerados automaticamente
+*.egg-info/
+*.egg
+*.pyc
+*.pyo
+
+# Arquivos de log
+*.log
+
+# Arquivos de backup
+*~
